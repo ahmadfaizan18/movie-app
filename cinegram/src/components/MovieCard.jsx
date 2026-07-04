@@ -15,13 +15,20 @@ export function MovieCard({ imdbid }) {
   if (!movie) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h3>{movie.Title}</h3>
-      <p>Year: {movie.Year}</p>
-      <p>Genre: {movie.Genre}</p>
-      <p>Director: {movie.Director}</p>
-      <p>Actors: {movie.Actors}</p>
-      <p>Plot: {movie.Plot}</p>
-    </div>
+    <article className="movie-card">
+      <img
+        className="movie-card__poster"
+        src={movie.Poster}
+        alt={`${movie.Title} Poster`}
+      />
+      <div className="movie-card__info">
+        <h3 className="movie-card__title">{movie.Title}</h3>
+        <p className="movie-card__meta">Year: {movie.Year}</p>
+        <p className="movie-card__meta">Genre: {movie.Genre}</p>
+        <p className="movie-card__meta">Director: {movie.Director}</p>
+        <p className="movie-card__meta">Actors: {movie.Actors}</p>
+        <p className="movie-card__plot">Plot: {movie.Plot}</p>
+      </div>
+    </article>
   );
 }
